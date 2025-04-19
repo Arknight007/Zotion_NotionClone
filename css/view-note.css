@@ -1,0 +1,114 @@
+.view-header {
+  padding: 16px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.view-actions,
+.view-tools {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.view-header h1 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 16px;
+}
+
+.view-container {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.note-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.note-content h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.note-content h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+
+.note-content h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+
+.note-content p {
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.note-content ul,
+.note-content ol {
+  margin-bottom: 16px;
+  padding-left: 24px;
+}
+
+.note-content li {
+  margin-bottom: 8px;
+}
+
+.note-content .todo-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.note-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 24px;
+}
+
+.note-content th,
+.note-content td {
+  border: 1px solid var(--border-color);
+  padding: 12px;
+  text-align: left;
+}
+
+.note-content th {
+  background-color: var(--hover-bg);
+  font-weight: 600;
+}
+
+.note-content .timeline {
+  margin-bottom: 24px;
+}
+
+.note-content .timeline-item {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.note-content .timeline-date {
+  min-width: 120px;
+  font-weight: 600;
+}
+
+.note-content .timeline-content {
+  flex: 1;
+  padding: 12px;
+  background-color: var(--hover-bg);
+  border-radius: var(--radius-sm);
+}
+

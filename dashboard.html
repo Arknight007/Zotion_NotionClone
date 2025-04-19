@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notely | Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Notely</h2>
+            </div>
+            <div class="user-info">
+                <div class="user-avatar">
+                    <span id="user-initial">U</span>
+                </div>
+                <span id="user-name">User's Workspace</span>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active"><a href="dashboard.html"><span class="icon">📋</span> Dashboard</a></li>
+                    <li><a href="templates.html"><span class="icon">🎨</span> Templates</a></li>
+                    <li><a href="settings.html"><span class="icon">⚙️</span> Settings</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-collections">
+                <div class="collections-header">
+                    <h3>Collections</h3>
+                    <button class="btn-icon collection-add"><span>+</span></button>
+                </div>
+                <ul class="collections-list">
+                    <li><a href="#"><span class="collection-icon">📚</span> Study Notes</a></li>
+                    <li><a href="#"><span class="collection-icon">💼</span> Work Projects</a></li>
+                    <li><a href="#"><span class="collection-icon">🏠</span> Home</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-footer">
+                <button id="logout-btn" class="btn btn-outline">Log Out</button>
+            </div>
+        </aside>
+        <main class="main-content">
+            <header class="main-header">
+                <div class="search-container">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" placeholder="Search notes..." class="search-input">
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-icon header-btn">🔔</button>
+                    <button id="new-note-btn" class="btn btn-primary">+ New Note</button>
+                </div>
+            </header>
+            <div class="dashboard-content">
+                <div class="dashboard-overview">
+                    <div class="dashboard-widget">
+                        <div class="widget-icon">📝</div>
+                        <div class="widget-content">
+                            <h3>Total Notes</h3>
+                            <p id="total-notes-count">0</p>
+                        </div>
+                    </div>
+                    <div class="dashboard-widget">
+                        <div class="widget-icon">⭐</div>
+                        <div class="widget-content">
+                            <h3>Favorites</h3>
+                            <p id="favorites-widget-count">0</p>
+                        </div>
+                    </div>
+                    <div class="dashboard-widget">
+                        <div class="widget-icon">📊</div>
+                        <div class="widget-content">
+                            <h3>Templates Used</h3>
+                            <p id="templates-count">0</p>
+                        </div>
+                    </div>
+                    <div class="dashboard-widget">
+                        <div class="widget-icon">📅</div>
+                        <div class="widget-content">
+                            <h3>Recent Activity</h3>
+                            <p id="activity-count">0 updates</p>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="recent-section">
+                    <h2>
+                        <div class="section-header-left">
+                            <span class="icon">📋</span>
+                            <span>Recent Notes</span>
+                            <span class="notes-count" id="recent-count">0 notes</span>
+                        </div>
+                        <div class="section-actions">
+                            <button class="btn btn-icon view-toggle" title="Toggle view">
+                                <span>☰</span>
+                            </button>
+                            <select class="sort-select">
+                                <option value="updated">Last Updated</option>
+                                <option value="created">Date Created</option>
+                                <option value="alphabetical">A-Z</option>
+                            </select>
+                        </div>
+                    </h2>
+                    <div class="notes-grid" id="recent-notes">
+                        <!-- Notes will be dynamically added here -->
+                    </div>
+                </section>
+                <section class="favorites-section">
+                    <h2>
+                        <div class="section-header-left">
+                            <span class="icon">⭐</span>
+                            <span>Favorites</span>
+                            <span class="notes-count" id="favorites-count">0 notes</span>
+                        </div>
+                        <div class="section-actions">
+                            <button class="btn btn-icon view-toggle" title="Toggle view">
+                                <span>☰</span>
+                            </button>
+                        </div>
+                    </h2>
+                    <div class="notes-grid" id="favorite-notes">
+                        <!-- Favorite notes will be dynamically added here -->
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <div id="new-note-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Create New Note</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="template-selection">
+                    <h3>Choose a template</h3>
+                    <div class="templates-grid">
+                        <div class="template-card" data-template="basic">
+                            <div class="template-icon">📝</div>
+                            <div class="template-preview-mini basic-preview-mini"></div>
+                            <h4>Basic Note</h4>
+                            <p>Simple text note</p>
+                        </div>
+                        <div class="template-card" data-template="todo">
+                            <div class="template-icon">✓</div>
+                            <div class="template-preview-mini todo-preview-mini"></div>
+                            <h4>To-Do List</h4>
+                            <p>Task list with checkboxes</p>
+                        </div>
+                        <div class="template-card" data-template="table">
+                            <div class="template-icon">📊</div>
+                            <div class="template-preview-mini table-preview-mini"></div>
+                            <h4>Table</h4>
+                            <p>Structured data in rows and columns</p>
+                        </div>
+                        <div class="template-card" data-template="timeline">
+                            <div class="template-icon">📅</div>
+                            <div class="template-preview-mini timeline-preview-mini"></div>
+                            <h4>Timeline</h4>
+                            <p>Chronological events</p>
+                        </div>
+                        <div class="template-card" data-template="expense">
+                            <div class="template-icon">💰</div>
+                            <div class="template-preview-mini expense-preview-mini"></div>
+                            <h4>Expense Tracker</h4>
+                            <p>Track your spending</p>
+                        </div>
+                        <div class="template-card" data-template="student">
+                            <div class="template-icon">🎓</div>
+                            <div class="template-preview-mini student-preview-mini"></div>
+                            <h4>Student Planner</h4>
+                            <p>Manage courses and assignments</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="note-title">Note Title</label>
+                    <input type="text" id="note-title" placeholder="Enter a title for your note">
+                </div>
+                <div class="form-group">
+                    <label for="note-collection">Add to Collection</label>
+                    <select id="note-collection">
+                        <option value="">No Collection</option>
+                        <option value="study">Study Notes</option>
+                        <option value="work">Work Projects</option>
+                        <option value="home">Home</option>
+                    </select>
+                </div>
+                <button id="create-note-btn" class="btn btn-primary">Create Note</button>
+            </div>
+        </div>
+    </div>
+    <script src="js/theme.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notely | Sign Up</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/auth.css">
+  <style>
+    body {
+      background-color: #000000;
+      background-image: none;
+    }
+    
+    .auth-container {
+      background-color: #000000;
+      background-image: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    
+    .form-container {
+      text-align: center;
+      width: 100%;
+      max-width: 600px;
+    }
+    
+    .app-title {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #66e0ff;
+      text-shadow: 0 0 10px rgba(102, 224, 255, 0.8);
+      letter-spacing: -0.5px;
+    }
+    
+    .app-subtitle {
+      color: #66e0ff;
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      font-style: italic;
+    }
+    
+    .input-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    
+    .input-label {
+      display: block;
+      color: #66e0ff;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      font-weight: 500;
+      text-shadow: 0 0 5px rgba(102, 224, 255, 0.3);
+    }
+    
+    .input-field {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      background-color: #f5f5fa;
+      border-radius: 0;
+      font-size: 1rem;
+      box-shadow: 0 0 15px rgba(102, 224, 255, 0.3);
+    }
+    
+    .submit-btn {
+      background-color: transparent;
+      color: #66e0ff;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      margin-top: 20px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px rgba(102, 224, 255, 0.8);
+      transition: all 0.3s ease;
+    }
+    
+    .submit-btn:hover {
+      color: #ffffff;
+      text-shadow: 0 0 15px rgba(102, 224, 255, 1);
+    }
+    
+    .auth-link {
+      margin-top: 30px;
+      color: #66e0ff;
+      font-style: italic;
+    }
+    
+    .auth-link a {
+      color: #66e0ff;
+      text-decoration: none;
+      text-shadow: 0 0 5px rgba(102, 224, 255, 0.5);
+    }
+    
+    .auth-link a:hover {
+      color: #ffffff;
+      text-shadow: 0 0 10px rgba(102, 224, 255, 0.8);
+    }
+    
+    /* Password requirements popup */
+    .password-popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.9);
+      border: 1px solid #66e0ff;
+      box-shadow: 0 0 20px rgba(102, 224, 255, 0.5);
+      padding: 20px;
+      z-index: 1000;
+      max-width: 400px;
+      width: 100%;
+    }
+    
+    .popup-header {
+      color: #66e0ff;
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      text-align: center;
+      text-shadow: 0 0 5px rgba(102, 224, 255, 0.5);
+    }
+    
+    .password-requirements {
+      text-align: left;
+    }
+    
+    .requirement {
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .requirement-icon {
+      margin-right: 10px;
+    }
+    
+    .requirement.met {
+      color: #33ff99;
+      text-shadow: 0 0 5px rgba(51, 255, 153, 0.5);
+    }
+    
+    .close-popup {
+      color: #66e0ff;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+    
+    .form-container {
+      position: relative;
+    }
+    
+    .input-box {
+      position: relative;
+      margin-bottom: 30px;
+    }
+    
+    .input-box::before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      border: 2px solid transparent;
+      border-image: linear-gradient(45deg, #66e0ff, #9e30a9);
+      border-image-slice: 1;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      transform: skew(-3deg, 0);
+      z-index: -1;
+      box-shadow: 0 0 15px rgba(102, 224, 255, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="auth-container">
+    <div class="form-container">
+      <h1 class="app-title">Notely</h1>
+      <p class="app-subtitle">Create your account</p>
+      
+      <form id="signup-form">
+        <div class="input-box">
+          <div class="input-group">
+            <label for="name" class="input-label">Full Name</label>
+            <input type="text" id="name" name="name" class="input-field" required placeholder="Enter your full name">
+            <span class="error-message" id="name-error"></span>
+          </div>
+          
+          <div class="input-group">
+            <label for="email" class="input-label">Email</label>
+            <input type="email" id="email" name="email" class="input-field" required placeholder="Enter your email">
+            <span class="error-message" id="email-error"></span>
+          </div>
+          
+          <div class="input-group">
+            <label for="password" class="input-label">Password</label>
+            <input type="password" id="password" name="password" class="input-field" required placeholder="Create a password">
+            <span class="error-message" id="password-error"></span>
+          </div>
+          
+          <div class="input-group">
+            <label for="confirm-password" class="input-label">Confirm Password</label>
+            <input type="password" id="confirm-password" name="confirm-password" class="input-field" required placeholder="Confirm your password">
+            <span class="error-message" id="confirm-password-error"></span>
+          </div>
+        </div>
+        
+        <button type="submit" id="signup-button" class="submit-btn">Sign Up</button>
+      </form>
+      
+      <div class="auth-link">
+        <p>Already have an account? <a href="index.html">Sign in</a></p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Password requirements popup -->
+  <div id="password-popup" class="password-popup">
+    <span class="close-popup" id="close-popup">&times;</span>
+    <h3 class="popup-header">Password Requirements</h3>
+    <div class="password-requirements">
+      <div class="requirement" id="length-requirement">
+        <span class="requirement-icon">○</span> At least 8 characters
+      </div>
+      <div class="requirement" id="uppercase-requirement">
+        <span class="requirement-icon">○</span> At least 1 uppercase letter
+      </div>
+      <div class="requirement" id="lowercase-requirement">
+        <span class="requirement-icon">○</span> At least 1 lowercase letter
+      </div>
+      <div class="requirement" id="number-requirement">
+        <span class="requirement-icon">○</span> At least 1 number
+      </div>
+      <div class="requirement" id="special-requirement">
+        <span class="requirement-icon">○</span> At least 1 special character
+      </div>
+    </div>
+  </div>
+  
+  <script src="js/theme.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const passwordInput = document.getElementById('password');
+      const passwordPopup = document.getElementById('password-popup');
+      const closePopup = document.getElementById('close-popup');
+      
+      // Show password requirements popup when password field is focused
+      passwordInput.addEventListener('focus', function() {
+        passwordPopup.style.display = 'block';
+      });
+      
+      // Update password requirements while typing
+      passwordInput.addEventListener('input', function() {
+        const password = this.value;
+        updatePasswordRequirements(password);
+      });
+      
+      // Close popup when clicking the close button
+      closePopup.addEventListener('click', function() {
+        passwordPopup.style.display = 'none';
+      });
+      
+      // Close popup when clicking outside of it
+      window.addEventListener('click', function(event) {
+        if (event.target == passwordPopup) {
+          passwordPopup.style.display = 'none';
+        }
+      });
+      
+      // Helper function to update password requirements
+      function updatePasswordRequirements(password) {
+        const hasLength = password.length >= 8;
+        const hasUppercase = /[A-Z]/.test(password);
+        const hasLowercase = /[a-z]/.test(password);
+        const hasNumber = /[0-9]/.test(password);
+        const hasSpecial = /[^A-Za-z0-9]/.test(password);
+        
+        updateRequirement(document.getElementById('length-requirement'), hasLength);
+        updateRequirement(document.getElementById('uppercase-requirement'), hasUppercase);
+        updateRequirement(document.getElementById('lowercase-requirement'), hasLowercase);
+        updateRequirement(document.getElementById('number-requirement'), hasNumber);
+        updateRequirement(document.getElementById('special-requirement'), hasSpecial);
+      }
+      
+      // Helper function to update a single requirement
+      function updateRequirement(element, isMet) {
+        if (isMet) {
+          element.classList.add("met");
+          element.classList.remove("unmet");
+          element.querySelector(".requirement-icon").textContent = "✓";
+        } else {
+          element.classList.add("unmet");
+          element.classList.remove("met");
+          element.querySelector(".requirement-icon").textContent = "○";
+        }
+      }
+    });
+  </script>
+</body>
+</html>
+

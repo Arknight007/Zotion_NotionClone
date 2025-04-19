@@ -1,0 +1,696 @@
+.templates-content {
+  padding: 32px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.templates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 40px;
+  padding: 20px;
+}
+
+.template-card.large {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background-color: var(--card-bg);
+  box-shadow: var(--shadow-sm);
+  min-height: 420px;
+}
+
+.template-card.large:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+  border-color: var(--primary-color);
+}
+
+.template-preview {
+  flex: 1;
+  padding: 24px;
+  background-color: var(--hover-bg);
+  min-height: 300px;
+}
+
+.preview-content {
+  background-color: var(--card-bg);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  height: 100%;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.template-card.large:hover .preview-content {
+  box-shadow: var(--shadow-md);
+  transform: scale(1.02);
+}
+
+.template-info {
+  padding: 24px;
+  border-top: 1px solid var(--border-color);
+  background-color: var(--card-bg);
+}
+
+.template-info h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-color);
+}
+
+.template-info p {
+  font-size: 14px;
+  color: var(--text-light);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.template-info .btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.template-info .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .templates-grid {
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .templates-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 12px;
+  }
+
+  .templates-content {
+    padding: 16px;
+  }
+}
+
+/* Todo template */
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  padding: 4px 0;
+}
+
+.todo-item input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+}
+
+.todo-preview {
+  display: flex;
+  flex-direction: column;
+}
+
+.todo-preview h3 {
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+/* Table template */
+.table-preview h3 {
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.table-preview table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.table-preview th,
+.table-preview td {
+  border: 1px solid var(--border-color);
+  padding: 8px;
+  text-align: left;
+}
+
+.table-preview th {
+  background-color: var(--hover-bg);
+  font-weight: 600;
+}
+
+/* Timeline template */
+.timeline-preview h3 {
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 12px;
+  padding: 4px 0;
+}
+
+.timeline-date {
+  min-width: 60px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.timeline-content {
+  flex: 1;
+  padding: 4px 8px;
+  background-color: var(--hover-bg);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+}
+
+/* Expense Tracker template */
+.expense-preview h3 {
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.expense-tabs {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 8px;
+}
+
+.expense-tab {
+  font-size: 14px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.expense-tab.active {
+  color: var(--primary-color);
+  font-weight: 500;
+  background-color: rgba(46, 111, 219, 0.1);
+}
+
+.dark .expense-tab.active {
+  background-color: rgba(64, 128, 230, 0.2);
+}
+
+.expense-group {
+  margin-bottom: 16px;
+}
+
+.expense-date {
+  font-weight: 600;
+  margin-bottom: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.expense-total {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.expense-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 14px;
+}
+
+.expense-icon {
+  margin-right: 8px;
+  width: 24px;
+  text-align: center;
+}
+
+.expense-name {
+  flex: 1;
+}
+
+.expense-category {
+  color: var(--text-light);
+  margin-right: 16px;
+}
+
+.expense-amount {
+  font-weight: 500;
+  min-width: 80px;
+  text-align: right;
+}
+
+/* Student Planner template */
+.student-preview h3 {
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.student-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.student-section {
+  margin-bottom: 8px;
+}
+
+.student-section h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-light);
+}
+
+.student-action,
+.student-course {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 4px;
+  font-size: 14px;
+  background-color: var(--hover-bg);
+}
+
+.student-icon {
+  margin-right: 8px;
+  width: 24px;
+  text-align: center;
+}
+
+.student-count {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--text-light);
+}
+
+.page-header {
+  padding: 40px 24px 24px;
+  background-color: var(--background-color);
+}
+
+.page-header h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text-color);
+}
+
+.page-header p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+.templates-container {
+  padding: 24px;
+}
+
+.template-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.template-card {
+  background-color: var(--card-bg-color);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  transition: all 0.2s ease;
+  position: relative;
+  height: 240px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.template-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-color);
+}
+
+.template-card .template-icon {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: var(--primary-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  z-index: 2;
+}
+
+.template-info {
+  padding: 20px 16px 16px 70px;
+  background-color: var(--card-bg-color);
+  z-index: 1;
+}
+
+.template-info h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-color);
+}
+
+.template-info p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 0;
+}
+
+.template-card .use-template {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.template-card:hover .use-template {
+  opacity: 1;
+}
+
+.template-preview {
+  position: absolute;
+  top: 90px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  background-color: var(--hover-bg);
+}
+
+.template-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: all 0.3s ease;
+}
+
+.template-card:hover .template-preview img {
+  transform: scale(1.05);
+}
+
+.template-details-container {
+  padding: 0 24px 40px;
+  display: none;
+}
+
+.template-details {
+  background-color: var(--card-bg-color);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.template-details-header {
+  display: flex;
+  align-items: center;
+  padding: 24px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.template-details-header .template-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: var(--primary-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  margin-right: 16px;
+}
+
+.template-details-header h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.template-details-body {
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.template-details-body > p {
+  grid-column: 1 / -1;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.template-features, .template-best-uses {
+  background-color: var(--hover-color);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.template-features h3, .template-best-uses h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--text-color);
+}
+
+.template-features ul, .template-best-uses ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.template-features li, .template-best-uses li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  color: var(--text-color);
+  font-size: 0.95rem;
+}
+
+.template-features li:before, .template-best-uses li:before {
+  content: '✓';
+  color: var(--primary-color);
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.template-details-footer {
+  padding: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.template-preview-large {
+  width: 100%;
+  max-width: 800px;
+  height: 400px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  background-color: var(--card-bg);
+}
+
+.template-preview-large .preview-content {
+  height: 100%;
+  padding: 32px;
+  overflow: auto;
+}
+
+.template-preview-large .basic-preview h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.template-preview-large .basic-preview h2 {
+  font-size: 1.5rem;
+  margin: 1.5rem 0 0.75rem;
+  color: var(--text-color);
+}
+
+.template-preview-large .basic-preview p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+.template-preview-large .basic-preview ul {
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+}
+
+.template-preview-large .basic-preview li {
+  margin-bottom: 0.5rem;
+}
+
+.template-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* Create Note Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: var(--background-color);
+  margin: 10% auto;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.modal-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.close-modal {
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--text-muted);
+}
+
+.close-modal:hover {
+  color: var(--text-color);
+}
+
+.modal-body {
+  padding: 24px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.modal-body .btn {
+  width: 100%;
+  margin-top: 16px;
+}
+
+/* Active template card */
+.template-card.active {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .template-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .template-details-body {
+    grid-template-columns: 1fr;
+  }
+  
+  .template-preview-large {
+    height: 300px;
+  }
+}
+
+/* Show template details on click */
+.show-details .templates-container {
+  display: none;
+}
+
+.show-details .template-details-container {
+  display: block;
+}
+
+/* When a template card is selected */
+.template-card.selected {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+/* Preview content for template cards */
+.template-preview > div {
+  width: 100%;
+  height: 100%;
+  background-color: var(--card-bg);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.template-card:hover .template-preview > div {
+  opacity: 1;
+}
+

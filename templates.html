@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notely | Templates</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/templates.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Notely</h2>
+            </div>
+            <div class="user-info">
+                <div class="user-avatar">
+                    <span id="user-initial">U</span>
+                </div>
+                <span id="user-name">User's Workspace</span>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="dashboard.html"><span class="icon">📋</span> Dashboard</a></li>
+                    <li><a href="templates.html" class="active"><span class="icon">🎨</span> Templates</a></li>
+                    <li><a href="settings.html"><span class="icon">⚙️</span> Settings</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-collections">
+                <div class="collections-header">
+                    <h3>Collections</h3>
+                    <button class="btn-icon collection-add"><span>+</span></button>
+                </div>
+                <ul class="collections-list">
+                    <li><a href="#"><span class="collection-icon">📚</span> Study Notes</a></li>
+                    <li><a href="#"><span class="collection-icon">💼</span> Work Projects</a></li>
+                    <li><a href="#"><span class="collection-icon">🏠</span> Home</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-footer">
+                <button id="logout-btn" class="btn btn-outline">Log Out</button>
+            </div>
+        </aside>
+        <main class="main-content">
+            <header class="page-header">
+                <h1>Templates</h1>
+                <p>Choose a template to create a new note</p>
+            </header>
+            
+            <div class="templates-container">
+                <div class="template-grid">
+                    <!-- Basic Template -->
+                    <div class="template-card" data-template="basic">
+                        <div class="template-icon">📄</div>
+                        <div class="template-info">
+                            <h3>Basic Note</h3>
+                            <p>A clean, simple note for general writing.</p>
+                        </div>
+                        <button class="btn btn-primary use-template">Use Template</button>
+                        <div class="template-preview basic-preview">
+                            <div class="preview-text">
+                                <h3>Welcome to your note</h3>
+                                <p>Start writing...</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Todo Template -->
+                    <div class="template-card" data-template="todo">
+                        <div class="template-icon">✓</div>
+                        <div class="template-info">
+                            <h3>Todo List</h3>
+                            <p>Keep track of tasks with checkboxes.</p>
+                        </div>
+                        <button class="btn btn-primary use-template">Use Template</button>
+                        <div class="template-preview todo-preview">
+                            <div class="preview-list">
+                                <div class="preview-item">✓ Task 1</div>
+                                <div class="preview-item">☐ Task 2</div>
+                                <div class="preview-item">☐ Task 3</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Table Template -->
+                    <div class="template-card" data-template="table">
+                        <div class="template-icon">📊</div>
+                        <div class="template-info">
+                            <h3>Table</h3>
+                            <p>Organize information in rows and columns.</p>
+                        </div>
+                        <button class="btn btn-primary use-template">Use Template</button>
+                        <div class="template-preview table-preview">
+                            <div class="preview-table"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Template -->
+                    <div class="template-card" data-template="timeline">
+                        <div class="template-icon">📅</div>
+                        <div class="template-info">
+                            <h3>Timeline</h3>
+                            <p>Track events chronologically.</p>
+                        </div>
+                        <button class="btn btn-primary use-template">Use Template</button>
+                        <div class="template-preview timeline-preview">
+                            <div class="preview-timeline"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Expense Template -->
+                    <div class="template-card" data-template="expense">
+                        <div class="template-icon">💰</div>
+                        <div class="template-info">
+                            <h3>Expense Tracker</h3>
+                            <p>Track income and expenses.</p>
+                        </div>
+                        <button class="btn btn-primary use-template">Use Template</button>
+                        <div class="template-preview expense-preview">
+                            <div class="preview-chart"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Student Template -->
+                    <div class="template-card" data-template="student">
+                        <div class="template-icon">🎓</div>
+                        <div class="template-info">
+                            <h3>Student Planner</h3>
+                            <p>Manage courses and assignments.</p>
+                        </div>
+                        <button class="btn btn-primary use-template">Use Template</button>
+                        <div class="template-preview student-preview">
+                            <div class="preview-calendar"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="template-details-container">
+                <header class="details-header">
+                    <button id="back-btn" class="btn btn-icon"><span class="icon">←</span></button>
+                    <h2>Template Details</h2>
+                </header>
+                <div id="template-details" class="template-details">
+                    <div class="template-details-header">
+                        <div class="template-icon" id="detail-icon">📄</div>
+                        <h2 id="detail-title">Basic Note</h2>
+                    </div>
+                    <div class="template-details-body">
+                        <p id="detail-description">A clean, simple note for general writing and note-taking.</p>
+                        <div class="template-features">
+                            <h3>Features</h3>
+                            <ul id="detail-features">
+                                <li>Rich text formatting</li>
+                                <li>Support for headings, lists, and links</li>
+                                <li>Insert images and attachments</li>
+                                <li>Clean, distraction-free writing experience</li>
+                            </ul>
+                        </div>
+                        <div class="template-best-uses">
+                            <h3>Best Used For</h3>
+                            <ul id="detail-best-uses">
+                                <li>Meeting notes</li>
+                                <li>Project documentation</li>
+                                <li>Journal entries</li>
+                                <li>Research notes</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="template-details-footer">
+                        <div class="template-preview-large">
+                            <div id="detail-preview" class="preview-content basic-preview">
+                                <h1>Welcome to Your Note</h1>
+                                <p>This is a simple, clean note for your thoughts.</p>
+                                <h2>Use headings to organize</h2>
+                                <ul>
+                                    <li>Create lists for better organization</li>
+                                    <li>Add <strong>formatting</strong> to emphasize important points</li>
+                                    <li>Insert links, images, and more</li>
+                                </ul>
+                                <p>Start writing and capture your ideas effortlessly.</p>
+                            </div>
+                        </div>
+                        <div class="template-actions">
+                            <button id="create-from-template" class="btn btn-primary">Create New Note</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <div id="create-note-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Create New Note</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="note-title">Note Title</label>
+                    <input type="text" id="note-title" placeholder="Untitled Note">
+                </div>
+                <div class="form-group">
+                    <label for="note-collection">Collection (Optional)</label>
+                    <select id="note-collection">
+                        <option value="">No Collection</option>
+                        <option value="study">Study Notes</option>
+                        <option value="work">Work Projects</option>
+                        <option value="home">Home</option>
+                    </select>
+                </div>
+                <input type="hidden" id="note-template" value="basic">
+                <button id="create-note-btn" class="btn btn-primary">Create Note</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/theme.js"></script>
+    <script src="js/templates.js"></script>
+</body>
+</html>
+

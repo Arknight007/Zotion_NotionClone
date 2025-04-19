@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Direct Registration Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+    button {
+      padding: 10px 15px;
+      background-color: #4285f4;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    #result {
+      margin-top: 20px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      background-color: #f9f9f9;
+      min-height: 200px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Direct Registration Test</h1>
+  <p>This page tests the registration API directly with minimal code.</p>
+  
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input type="text" id="name" value="Test User">
+  </div>
+  
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="email" id="email" value="unique@example.com">
+  </div>
+  
+  <div class="form-group">
+    <label for="password">Password:</label>
+    <input type="password" id="password" value="Password123!">
+  </div>
+  
+  <button id="testBtn">Test Registration</button>
+  
+  <div id="result">
+    <h3>Results will appear here</h3>
+  </div>
+  
+  <script>
+    document.getElementById('testBtn').addEventListener('click', function() {
+      const resultDiv = document.getElementById('result');
+      resultDiv.innerHTML = '<p>Sending request...</p>';
+      
+      // Add timestamp to email to make it unique
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value.replace('@', Date.now() + '@');
+      const password = document.getElementById('password').value;
+      
+      resultDiv.innerHTML += `<p>Using email: ${email}</p>`;
+      
+      // Make the API call
+      fetch('http://localhost:3000/api/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          password: password
+        }),
+      })
+      .then(response => {
+        resultDiv.innerHTML += `<p>Response status: ${response.status}</p>`;
+        return response.json().then(data => {
+          if (!response.ok) {
+            throw new Error(data.error || 'Registration failed');
+          }
+          return data;
+        });
+      })
+      .then(user => {
+        resultDiv.innerHTML += `
+          <p>Registration successful!</p>
+          <p>User ID: ${user._id}</p>
+          <p>Name: ${user.name}</p>
+          <p>Email: ${user.email}</p>
+        `;
+      })
+      .catch(error => {
+        resultDiv.innerHTML += `
+          <p style="color: red;">Error: ${error.message}</p>
+        `;
+      });
+    });
+  </script>
+</body>
+</html> 

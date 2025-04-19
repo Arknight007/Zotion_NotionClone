@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notely | View Note</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/view-note.css">
+</head>
+<body>
+  <div class="app-container">
+      <aside class="sidebar">
+          <div class="sidebar-header">
+              <h2>Notely</h2>
+          </div>
+          <div class="user-info">
+              <div class="user-avatar">
+                  <span id="user-initial">U</span>
+              </div>
+              <span id="user-name">User's Workspace</span>
+          </div>
+          <nav class="sidebar-nav">
+              <ul>
+                  <li><a href="dashboard.html"><span class="icon">📋</span> Dashboard</a></li>
+                  <li><a href="templates.html"><span class="icon">🎨</span> Templates</a></li>
+                  <li><a href="settings.html"><span class="icon">⚙️</span> Settings</a></li>
+              </ul>
+          </nav>
+          <div class="sidebar-footer">
+              <button id="logout-btn" class="btn btn-outline">Log Out</button>
+          </div>
+      </aside>
+      <main class="main-content">
+          <header class="view-header">
+              <div class="view-actions">
+                  <button id="back-btn" class="btn btn-icon"><span class="icon">←</span></button>
+                  <h1 id="note-title">Note Title</h1>
+              </div>
+              <div class="view-tools">
+                  <button id="edit-btn" class="btn btn-primary">Edit</button>
+                  <button id="favorite-btn" class="btn btn-icon"><span class="icon">☆</span></button>
+                  <div class="dropdown">
+                      <button class="btn btn-icon dropdown-toggle"><span class="icon">⋯</span></button>
+                      <div class="dropdown-menu">
+                          <a href="#" id="share-note">Share</a>
+                          <a href="#" id="duplicate-note">Duplicate</a>
+                          <a href="#" id="delete-note">Delete</a>
+                      </div>
+                  </div>
+              </div>
+          </header>
+          <div class="view-container">
+              <div id="note-content" class="note-content">
+                  <!-- Note content will be dynamically loaded here -->
+              </div>
+          </div>
+      </main>
+  </div>
+  <script src="js/theme.js"></script>
+  <script src="js/view-note.js"></script>
+</body>
+</html>
+

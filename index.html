@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notely | Sign In</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+  <div class="auth-container">
+    <form class="container" id="signin-form">
+      <div class="auth-header">
+        <h1>Notely</h1>
+        <p>All your notes, organized.</p>
+      </div>
+      
+      <div class="input-container">
+        <div class="input-content">
+          <div class="input-dist">
+            <div class="input-type">
+              <label for="email">Email</label>
+              <input class="input-is" type="email" id="email" name="email" required placeholder="Enter your email">
+              <span class="error-message" id="email-error"></span>
+              
+              <label for="password">Password</label>
+              <input class="input-is" type="password" id="password" name="password" required placeholder="Enter your password">
+              <span class="error-message" id="password-error"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <button type="submit" id="signin-button" class="submit-button">Sign In</button>
+      
+      <div class="auth-links">
+        <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+      </div>
+    </form>
+  </div>
+  <script src="js/theme.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,521 @@
+/* Cyberpunk theme for auth pages */
+:root {
+  --primary-color-cyber: rgba(102, 224, 255, 0.8);
+  --primary-hover-cyber: rgb(255, 255, 255);
+  --background-cyber: #000000;
+  --text-color-cyber: hsla(192, 100%, 88%, 0.806);
+  --text-light-cyber: rgba(255, 255, 255, 0.6);
+  --text-bright-cyber: #ffffff;
+  --error-color-cyber: #ff3355;
+  --success-color-cyber: #33ff99;
+}
+
+.auth-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100vw;
+  background-color: var(--background-cyber);
+  background-image: 
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(64, 144, 181, 0.1) 1px,
+      rgb(0, 0, 0) 2px,
+      hsl(295, 60%, 12%, 0.2) 3px,
+      #153544 4px,
+      transparent 0.5%
+    );
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* New container for the cyberpunk form */
+.container {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  max-width: 480px;
+  width: 100%;
+  padding: 0 10px;
+}
+
+/* Input container with the glowing effect */
+.input-container {
+  filter: drop-shadow(46px 36px 24px #4090b5)
+    drop-shadow(-55px -40px 25px #9e30a9);
+  animation: blinkShadowsFilter 8s ease-in infinite;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.input-content {
+  display: grid;
+  position: relative;
+  width: 100%;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.input-content::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  filter: blur(40px);
+  -webkit-clip-path: polygon(
+    26% 0,
+    66% 0,
+    92% 0,
+    100% 8%,
+    100% 89%,
+    91% 100%,
+    7% 100%,
+    0 92%,
+    0 0
+  );
+  clip-path: polygon(
+    26% 0,
+    66% 0,
+    92% 0,
+    100% 8%,
+    100% 89%,
+    91% 100%,
+    7% 100%,
+    0 92%,
+    0 0
+  );
+  background: rgba(122, 251, 255, 0.5568627451);
+  transition: all 1s ease-in-out;
+  z-index: -2;
+}
+
+.input-content::after {
+  content: "";
+  position: absolute;
+  width: 98%;
+  height: 98%;
+  box-shadow: inset 0px 0px 20px 20px #212121;
+  background: repeating-linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(64, 144, 181, 0.6) 1px,
+      rgb(0, 0, 0) 3px,
+      hsl(295, 60%, 12%) 5px,
+      #153544 4px,
+      transparent 0.5%
+    ),
+    repeating-linear-gradient(
+      to left,
+      hsl(295, 60%, 12%) 100%,
+      hsla(295, 60%, 12%, 0.99) 100%
+    );
+  -webkit-clip-path: polygon(
+    26% 0,
+    31% 5%,
+    61% 5%,
+    66% 0,
+    92% 0,
+    100% 8%,
+    100% 89%,
+    91% 100%,
+    7% 100%,
+    0 92%,
+    0 0
+  );
+  clip-path: polygon(
+    26% 0,
+    31% 5%,
+    61% 5%,
+    66% 0,
+    92% 0,
+    100% 8%,
+    100% 89%,
+    91% 100%,
+    7% 100%,
+    0 92%,
+    0 0
+  );
+  animation: backglitch 50ms linear infinite;
+  z-index: -1;
+}
+
+.input-dist {
+  z-index: 80;
+  display: grid;
+  align-items: center;
+  width: 100%;
+  padding: 1.2rem 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+.input-type {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 1.1rem;
+  background-color: transparent;
+  width: 100%;
+  border: none;
+}
+
+/* Header styles */
+.auth-header {
+  text-align: center;
+  margin-bottom: 25px;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+.auth-header h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  background: linear-gradient(135deg, #66e0ff, #9e30a9);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.5px;
+  text-shadow: 0 0 10px rgba(102, 224, 255, 0.5);
+}
+
+.auth-header p {
+  color: var(--text-color-cyber);
+  font-size: 16px;
+  text-shadow: 0 0 5px rgba(102, 224, 255, 0.3);
+}
+
+/* Input field styles */
+.input-is {
+  color: var(--text-color-cyber);
+  font-size: 0.9rem;
+  background-color: transparent;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 16px;
+  border: none;
+  transition: all 1s ease-in-out;
+  border-bottom: 1px solid hsl(221, 26%, 43%);
+}
+
+.input-is:hover {
+  transition: all 1s ease-in-out;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(102, 224, 255, 0.2) 27%,
+    rgba(102, 224, 255, 0.2) 63%,
+    transparent 100%
+  );
+}
+
+.input-content:focus-within::before {
+  transition: all 1s ease-in-out;
+  background: hsla(0, 0%, 100%, 0.814);
+}
+
+.input-is:focus {
+  outline: none;
+  border-bottom: 1px solid hsl(192, 100%, 100%);
+  color: hsl(192, 100%, 88%);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(102, 224, 255, 0.2) 27%,
+    rgba(102, 224, 255, 0.2) 63%,
+    transparent 100%
+  );
+}
+
+.input-is::placeholder {
+  color: hsla(192, 100%, 88%, 0.806);
+  opacity: 0.7;
+}
+
+/* Labels */
+.input-type label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-color-cyber);
+  text-shadow: 0 0 5px rgba(102, 224, 255, 0.3);
+  text-align: left;
+}
+
+/* Submit button */
+.submit-button {
+  width: 50%;
+  border: none;
+  color: hsla(192, 100%, 88%, 0.806);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(102, 224, 255, 0.2) 27%,
+    rgba(102, 224, 255, 0.2) 63%,
+    transparent 100%
+  );
+  clip-path: polygon(0 0, 85% 0%, 100% 0, 100% 15%, 100% 90%, 91% 100%, 0 100%);
+  padding: 0.7rem 0;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  animation: blinkShadowsFilter 0.5s ease-in infinite;
+  transition: all 500ms;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.submit-button:hover {
+  color: hsl(0, 0%, 100%);
+  font-weight: bold;
+  text-shadow: 0 0 5px var(--primary-color-cyber);
+  box-shadow: 0 0 10px rgba(102, 224, 255, 0.5);
+}
+
+.submit-button.secondary {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(158, 48, 169, 0.2) 27%,
+    rgba(158, 48, 169, 0.2) 63%,
+    transparent 100%
+  );
+  margin-top: 5px;
+}
+
+/* Auth links */
+.auth-links {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-light-cyber);
+}
+
+.auth-links a {
+  color: var(--primary-color-cyber);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 5px rgba(102, 224, 255, 0.3);
+}
+
+.auth-links a:hover {
+  color: var(--primary-hover-cyber);
+  text-decoration: underline;
+  text-shadow: 0 0 8px rgba(102, 224, 255, 0.6);
+}
+
+/* Error messages */
+.error-message {
+  color: var(--error-color-cyber);
+  font-size: 12px;
+  margin-top: 6px;
+  display: none;
+  text-align: left;
+  text-shadow: 0 0 5px rgba(255, 51, 85, 0.5);
+}
+
+.error .error-message {
+  display: block;
+}
+
+.error .input-is {
+  border-color: var(--error-color-cyber);
+}
+
+/* Password strength */
+.password-strength {
+  height: 4px;
+  margin: 10px 0;
+  border-radius: 2px;
+  background-color: rgba(102, 224, 255, 0.1);
+  overflow: hidden;
+  width: 100%;
+}
+
+.password-strength-meter {
+  height: 100%;
+  width: 0;
+  transition: width 0.3s ease;
+}
+
+.strength-weak {
+  background-color: var(--error-color-cyber);
+  width: 33%;
+  box-shadow: 0 0 10px var(--error-color-cyber);
+}
+
+.strength-medium {
+  background-color: #f59e0b;
+  width: 66%;
+  box-shadow: 0 0 10px #f59e0b;
+}
+
+.strength-strong {
+  background-color: var(--success-color-cyber);
+  width: 100%;
+  box-shadow: 0 0 10px var(--success-color-cyber);
+}
+
+.password-requirements {
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--text-light-cyber);
+  text-align: left;
+  width: 100%;
+}
+
+.requirement {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.requirement-icon {
+  margin-right: 6px;
+  font-size: 12px;
+}
+
+.requirement.met {
+  color: var(--success-color-cyber);
+  text-shadow: 0 0 5px rgba(51, 255, 153, 0.5);
+}
+
+.requirement.unmet {
+  color: var(--text-light-cyber);
+  opacity: 0.7;
+}
+
+/* Custom popup */
+.custom-popup {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid var(--primary-color-cyber);
+  border-radius: 5px;
+  padding: 15px;
+  z-index: 9999;
+  max-width: 350px;
+  color: var(--text-color-cyber);
+  animation: blinkShadowsFilter 3s ease-in infinite;
+  box-shadow: 0 0 15px var(--primary-color-cyber);
+}
+
+.custom-popup h3 {
+  margin-top: 0;
+  color: var(--primary-color-cyber);
+}
+
+.custom-popup button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(102, 224, 255, 0.2) 27%,
+    rgba(102, 224, 255, 0.2) 63%,
+    transparent 100%
+  );
+  border: none;
+  color: var(--primary-color-cyber);
+  cursor: pointer;
+}
+
+.custom-popup.error {
+  border-color: var(--error-color-cyber);
+  box-shadow: 0 0 15px var(--error-color-cyber);
+}
+
+.custom-popup.error h3 {
+  color: var(--error-color-cyber);
+}
+
+/* Animations */
+@keyframes backglitch {
+  0% {
+    box-shadow: inset 0px 20px 20px 30px #212121;
+  }
+
+  50% {
+    box-shadow: inset 0px -20px 20px 30px hsl(297, 42%, 10%);
+  }
+
+  to {
+    box-shadow: inset 0px 20px 20px 30px #212121;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg) translate(-50%, 20%);
+  }
+
+  50% {
+    transform: rotate(180deg) translate(40%, 10%);
+  }
+
+  to {
+    transform: rotate(360deg) translate(-50%, 20%);
+  }
+}
+
+@keyframes blinkShadowsFilter {
+  0% {
+    filter: drop-shadow(46px 36px 28px rgba(64, 144, 181, 0.3411764706))
+      drop-shadow(-55px -40px 28px #9e30a9);
+  }
+
+  25% {
+    filter: drop-shadow(46px -36px 24px rgba(64, 144, 181, 0.8980392157))
+      drop-shadow(-55px 40px 24px #9e30a9);
+  }
+
+  50% {
+    filter: drop-shadow(46px 36px 30px rgba(64, 144, 181, 0.8980392157))
+      drop-shadow(-55px 40px 30px rgba(159, 48, 169, 0.2941176471));
+  }
+
+  75% {
+    filter: drop-shadow(20px -18px 25px rgba(64, 144, 181, 0.8980392157))
+      drop-shadow(-20px 20px 25px rgba(159, 48, 169, 0.2941176471));
+  }
+
+  to {
+    filter: drop-shadow(46px 36px 28px rgba(64, 144, 181, 0.3411764706))
+      drop-shadow(-55px -40px 28px #9e30a9);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 500px) {
+  .container {
+    padding: 0;
+  }
+  
+  .input-dist {
+    padding: 1rem;
+  }
+  
+  .submit-button {
+    width: 70%;
+  }
+  
+  .auth-header h1 {
+    font-size: 28px;
+  }
+}
+

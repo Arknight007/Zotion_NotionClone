@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notely | Editor</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/editor.css">
+</head>
+<body>
+  <div class="app-container">
+      <aside class="sidebar">
+          <div class="sidebar-header">
+              <h2>Notely</h2>
+          </div>
+          <div class="user-info">
+              <div class="user-avatar">
+                  <span id="user-initial">U</span>
+              </div>
+              <span id="user-name">User's Workspace</span>
+          </div>
+          <nav class="sidebar-nav">
+              <ul>
+                  <li><a href="dashboard.html"><span class="icon">📋</span> Dashboard</a></li>
+                  <li><a href="templates.html"><span class="icon">🎨</span> Templates</a></li>
+                  <li><a href="settings.html"><span class="icon">⚙️</span> Settings</a></li>
+              </ul>
+          </nav>
+          <div class="sidebar-collections">
+              <div class="collections-header">
+                  <h3>Collections</h3>
+                  <button class="btn-icon collection-add"><span>+</span></button>
+              </div>
+              <ul class="collections-list">
+                  <li><a href="#"><span class="collection-icon">📚</span> Study Notes</a></li>
+                  <li><a href="#"><span class="collection-icon">💼</span> Work Projects</a></li>
+                  <li><a href="#"><span class="collection-icon">🏠</span> Home</a></li>
+              </ul>
+          </div>
+          <div class="sidebar-footer">
+              <button id="logout-btn" class="btn btn-outline">Log Out</button>
+          </div>
+      </aside>
+      <main class="main-content">
+          <header class="editor-header">
+              <div class="editor-actions">
+                  <button id="back-btn" class="btn btn-icon"><span class="icon">←</span></button>
+                  <div class="editor-status">
+                      <span id="save-status">All changes saved</span>
+                  </div>
+              </div>
+              <div class="editor-tools">
+                  <button id="favorite-btn" class="btn btn-icon"><span class="favorite-icon">☆</span></button>
+                  <div class="dropdown">
+                      <button class="btn btn-icon dropdown-toggle"><span class="icon">⋯</span></button>
+                      <div class="dropdown-menu">
+                          <a href="#" id="share-note">Share</a>
+                          <a href="#" id="export-note">Export</a>
+                          <a href="#" id="duplicate-note">Duplicate</a>
+                          <a href="#" id="move-to-collection">Move to Collection</a>
+                          <a href="#" id="delete-note" class="text-error">Delete</a>
+                      </div>
+                  </div>
+              </div>
+          </header>
+          <div class="editor-container">
+              <div class="editor-content">
+                  <div class="note-title-container">
+                      <input type="text" id="note-title-input" placeholder="Untitled" class="note-title-input">
+                      <div class="template-badge">
+                          <span class="template-icon" id="template-icon">📄</span>
+                          <span id="template-name">Basic Note</span>
+                      </div>
+                  </div>
+                  <div id="editor-area" class="editor-area">
+                      <!-- Editor content will be dynamically loaded based on template type -->
+                  </div>
+                  <div class="editor-footer">
+                      <div class="editor-metadata">
+                          <span class="updated-date">Last updated: <span id="last-updated">Just now</span></span>
+                          <span class="word-count" id="word-count">0 words</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </main>
+  </div>
+  <div id="collection-modal" class="modal">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h2>Move to Collection</h2>
+              <span class="close-modal">&times;</span>
+          </div>
+          <div class="modal-body">
+              <div class="form-group">
+                  <label for="collection-select">Select Collection</label>
+                  <select id="collection-select">
+                      <option value="">No Collection</option>
+                      <option value="study">Study Notes</option>
+                      <option value="work">Work Projects</option>
+                      <option value="home">Home</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                  <label>Or Create New Collection</label>
+                  <div class="collection-create">
+                      <input type="text" id="new-collection" placeholder="Collection name">
+                      <button id="create-collection-btn" class="btn btn-primary">Create</button>
+                  </div>
+              </div>
+              <button id="move-collection-btn" class="btn btn-primary">Move Note</button>
+          </div>
+      </div>
+  </div>
+  <script src="js/theme.js"></script>
+  <script src="js/editor.js"></script>
+</body>
+</html>
