@@ -1,106 +1,190 @@
-# Zotion - Note Taking Application
+# 📒 Zotion - Note Taking Application
 
-A note-taking application with MySQL database connection for XAMPP, similar to Notion.
+A feature-rich note-taking app inspired by Notion, built with Node.js and MySQL using XAMPP.
 
-## Features
+![License](https://img.shields.io/github/license/your-username/zotion?style=flat-square)  
+![Stars](https://img.shields.io/github/stars/your-username/zotion?style=flat-square)  
+![Issues](https://img.shields.io/github/issues/your-username/zotion?style=flat-square)  
+![Forks](https://img.shields.io/github/forks/your-username/zotion?style=flat-square)  
+![Made with Node.js](https://img.shields.io/badge/Made%20with-Node.js-green?style=flat-square)
 
-- User authentication with session storage
-- Note creation and editing
-- Various note templates (Basic, Todo list, Table, Timeline, etc.)
-- MySQL database integration with XAMPP
+---
 
-## Setup
+## 🧠 Features
 
-### Prerequisites
+- 🔐 User authentication with session storage  
+- 📝 Rich note creation and editing  
+- 🧩 Multiple note templates (Todo List, Table, Timeline, etc.)  
+- 🗂️ MySQL database integration with XAMPP  
+- ⭐ Favorite notes  
+- ⏰ Timestamps for version tracking  
 
-- Node.js (v14 or later)
-- XAMPP with MySQL service running
+---
 
-### Installation
+## ⚙️ Tech Stack
 
-1. Clone the repository
+| Layer     | Technology            |
+|-----------|------------------------|
+| Frontend  | HTML, CSS, JavaScript  |
+| Backend   | Node.js, Express.js    |
+| Database  | MySQL (via XAMPP)      |
+| Auth      | Session-based auth     |
+| Runtime   | Node.js                |
+
+---
+
+## 🏗️ Architecture
+
+```
+Client (Browser)
+   |
+   | HTTP Requests (CRUD Notes, Login, etc.)
+   v
+Backend (Node.js + Express)
+   |
+   | SQL Queries
+   v
+Database (MySQL via XAMPP)
+```
+
+---
+
+## 🚀 Getting Started
+
+### 📦 Prerequisites
+
+- ✅ Node.js (v14 or later)  
+- ✅ XAMPP with MySQL service running
+
+### 🔧 Installation
+
+1. **Clone the Repository**
+
 ```bash
-git clone <repository-url>
+git clone https://github.com/your-username/zotion.git
 cd zotion
 ```
 
-2. Install dependencies
+2. **Install Dependencies**
+
 ```bash
 npm install
 ```
 
-3. Database Setup (choose one method)
+3. **Database Setup (choose one)**
 
-#### Method 1: Automatic Setup
+#### 🛠️ Method 1: Automatic Setup
+
 ```bash
-# Start XAMPP with MySQL service running first!
+# Make sure XAMPP is running with MySQL first!
 npm run install-db
 ```
 
-#### Method 2: Manual Setup
-- Start XAMPP Control Panel
-- Start the MySQL service
-- Open http://localhost/phpmyadmin in your browser
-- Create a new database named "zotion"
-- (Optional) Import the zotion_db.sql file from the project directory
+#### 🧑‍🔧 Method 2: Manual Setup
 
-### Running the application
+- Open XAMPP Control Panel and start MySQL  
+- Go to http://localhost/phpmyadmin  
+- Create a database named `zotion`  
+- (Optional) Import the `zotion_db.sql` file provided in the repo  
 
-1. Make sure XAMPP is running with MySQL service started
+---
 
-2. Start the server
+## 🏃‍♂️ Running the Application
+
+1. **Start MySQL in XAMPP**
+
+2. **Start the server**
+
 ```bash
 npm start
 ```
 
-3. For development with auto-restart:
+3. **For development (with auto-restart)**
+
 ```bash
 npm run dev
 ```
 
-4. Access the application in your browser at `http://localhost:3000`
+4. **Access the app**
 
-## Checking Database Connection
+```
+http://localhost:3000
+```
 
-You can check the database connection status by visiting:
+---
+
+## 🧪 Check Database Connection
+
+Visit:  
 ```
 http://localhost:3000/api/status
 ```
 
-## Database Schema
+---
 
-### Users Table
-- `id`: INT AUTO_INCREMENT PRIMARY KEY
-- `name`: VARCHAR(255)
-- `email`: VARCHAR(255) UNIQUE
-- `password`: VARCHAR(255)
-- `created_at`: TIMESTAMP
+## 🗃️ Database Schema
 
-### Notes Table
-- `id`: INT AUTO_INCREMENT PRIMARY KEY
-- `title`: VARCHAR(255)
-- `content`: JSON
-- `template`: VARCHAR(50)
-- `user_id`: INT (FOREIGN KEY)
-- `favorite`: BOOLEAN
-- `created_at`: TIMESTAMP
-- `updated_at`: TIMESTAMP
+### 🔐 Users Table
 
-## Note Templates
+| Column       | Type                    | Description             |
+|--------------|-------------------------|-------------------------|
+| `id`         | INT, PK, AUTO_INCREMENT | Unique ID               |
+| `name`       | VARCHAR(255)           | User's full name        |
+| `email`      | VARCHAR(255), UNIQUE   | Email ID                |
+| `password`   | VARCHAR(255)           | Hashed password         |
+| `created_at` | TIMESTAMP              | Account creation time   |
 
-- Basic: Simple text editor
-- Todo: Task list with completion tracking
-- Table: Data organized in rows and columns
-- Timeline: Events organized chronologically
-- Expense: Expense tracking by category
-- Student: Course, assignment, and exam tracking
+### 📝 Notes Table
 
-## Troubleshooting
+| Column       | Type                    | Description              |
+|--------------|-------------------------|--------------------------|
+| `id`         | INT, PK, AUTO_INCREMENT | Unique Note ID           |
+| `title`      | VARCHAR(255)           | Title of the note        |
+| `content`    | JSON                   | Note content (formatted) |
+| `template`   | VARCHAR(50)            | Template type            |
+| `user_id`    | INT, FK                | Associated user ID       |
+| `favorite`   | BOOLEAN                | Marked as favorite       |
+| `created_at` | TIMESTAMP              | Creation date            |
+| `updated_at` | TIMESTAMP              | Last modified time       |
 
-If you encounter database connection issues:
+---
 
-1. Make sure XAMPP is running with MySQL service started
-2. Check if the database "zotion" exists in phpMyAdmin
-3. Try running the database installation script: `npm run install-db`
-4. Check the default connection settings (host: localhost, user: root, password: empty)
-5. Verify MySQL service is running on the default port (3306)
+## 🧱 Note Templates
+
+- 📄 **Basic** – Simple text editor  
+- ✅ **Todo** – Task list with checkbox  
+- 📊 **Table** – Data in rows and columns  
+- 🕒 **Timeline** – Chronological event tracker  
+- 💰 **Expense** – Budget/expense tracking  
+- 🎓 **Student** – Course and assignment management  
+
+---
+
+## 🛠 Troubleshooting
+
+- ✅ Ensure MySQL is running via XAMPP  
+- ✅ Confirm `zotion` database exists in phpMyAdmin  
+- ✅ Run: `npm run install-db`  
+- ✅ Check default DB config:  
+  - Host: `localhost`  
+  - User: `root`  
+  - Password: _(empty)_  
+  - Port: `3306`  
+
+---
+
+## 📌 Contributing
+
+Pull requests are welcome! For major changes, please open an issue first to discuss what you'd like to change.
+
+---
+
+## 📃 License
+
+This project is [MIT](LICENSE) licensed.
+
+---
+
+## 🙌 Acknowledgements
+
+Inspired by Notion and other minimalist note-taking tools.
