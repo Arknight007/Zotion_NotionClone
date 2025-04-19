@@ -2,10 +2,10 @@
 
 A feature-rich note-taking app inspired by Notion, built with Node.js and MySQL using XAMPP.
 
-![License](https://img.shields.io/github/license/your-username/zotion?style=flat-square)  
-![Stars](https://img.shields.io/github/stars/your-username/zotion?style=flat-square)  
-![Issues](https://img.shields.io/github/issues/your-username/zotion?style=flat-square)  
-![Forks](https://img.shields.io/github/forks/your-username/zotion?style=flat-square)  
+![License](https://img.shields.io/github/license/Arknight007/Zotion_NotionClone?style=flat-square)  
+![Stars](https://img.shields.io/github/stars/Arknight007/Zotion_NotionClone?style=flat-square)  
+![Issues](https://img.shields.io/github/issues/Arknight007/Zotion_NotionClone?style=flat-square)  
+![Forks](https://img.shields.io/github/forks/Arknight007/Zotion_NotionClone?style=flat-square)  
 ![Made with Node.js](https://img.shields.io/badge/Made%20with-Node.js-green?style=flat-square)
 
 ---
@@ -61,8 +61,8 @@ Database (MySQL via XAMPP)
 1. **Clone the Repository**
 
 ```bash
-git clone https://github.com/your-username/zotion.git
-cd zotion
+git clone https://github.com/Arknight007/Zotion_NotionClone.git
+cd Zotion_NotionClone
 ```
 
 2. **Install Dependencies**
