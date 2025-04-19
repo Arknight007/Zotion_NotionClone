@@ -2,11 +2,7 @@
 
 A feature-rich note-taking app inspired by Notion, built with Node.js and MySQL using XAMPP.
 
-![License](https://img.shields.io/github/license/Arknight007/Zotion_NotionClone?style=flat-square)  
-![Stars](https://img.shields.io/github/stars/Arknight007/Zotion_NotionClone?style=flat-square)  
-![Issues](https://img.shields.io/github/issues/Arknight007/Zotion_NotionClone?style=flat-square)  
-![Forks](https://img.shields.io/github/forks/Arknight007/Zotion_NotionClone?style=flat-square)  
-![Made with Node.js](https://img.shields.io/badge/Made%20with-Node.js-green?style=flat-square)
+![License](https://img.shields.io/github/license/Arknight007/Zotion_NotionClone?style=flat-circle)  ![Stars](https://img.shields.io/github/stars/Arknight007/Zotion_NotionClone?style=flat-circle)  ![Issues](https://img.shields.io/github/issues/Arknight007/Zotion_NotionClone?style=flat-circle)  ![Forks](https://img.shields.io/github/forks/Arknight007/Zotion_NotionClone?style=flat-circle)  ![Made with Node.js](https://img.shields.io/badge/Made%20with-Node.js-green?style=flat-circle)
 
 ---
 
